@@ -3,9 +3,8 @@
 {% block title %}Create{% endblock %}
 
 {% block content %}
-    <h1 class="amatic-text text-light">New Question</h1>
+    <h1 class="amatic-text text-secondary">Add new answer</h1>
 
-    {% url "poll_create" as action_url %}
     {% include 'partial/form.html' with action_url=action_url form_method='post' %}
 
 {% endblock %}

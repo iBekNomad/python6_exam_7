@@ -2,19 +2,40 @@
 
 {% block title %}View{% endblock %}
 
+{% block menu %}
+    <li><a href="{% url 'poll_update' poll.pk %}" class="text-uppercase font-weight-bold">Update</a></li>
+    <li><a href="{% url 'poll_delete' poll.pk %}" class="font-weight-bold text-uppercase">Delete</a></li>
+    <li><a href="{% url 'choice_create' poll.pk %}" class="font-weight-bold text-uppercase">Add Answer Option</a></li>
+{% endblock %}
+
 {% block content %}
-    <div class="card w-75 text-white bg-secondary mb-3">
-        <div class="card-header d-inline-block">
+    <div class="card w-100 text-white bg-dark mb-3">
+        <h3 class="card-header d-inline-block font-weight-bold d-flex justify-content-center">
             {{ poll.question }}
-            <span class="float-right">{{ poll.created_at }}</span>
-        </div>
+{#            <span class="float-right">{{ poll.created_at }}</span>#}
+        </h3>
         <div class="card-body">
-            <h5 class="card-title">Secondary card title</h5>
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-                content.</p>
+            <h4 class="d-flex justify-content-center text-uppercase">Options:</h4>
+            <div class="row">
+                {% for choice in poll.choices.all %}
+                    <div class="col-sm-6 p-2">
+                        <div class="card text-light bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title d-flex justify-content-center font-weight-bold">{{ choice.text }}</h5>
+                                <div class="d-flex justify-content-around">
+                                    <a href="{% url 'choice_update' choice.pk %}" class="btn btn-outline-dark">Update</a>
+                                    <a href="{% url 'choice_delete' choice.pk %}" class="btn btn-outline-dark">Delete</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% empty %}
+                    <p class="col-sm-12">Нет ответов.</p>
+                {% endfor %}
+            </div>
             <div class="d-flex justify-content-around">
-                <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn-sm btn-outline-dark">Update</a></p>
-                <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn-sm btn-outline-dark">Delete</a></p>
+                <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn btn-secondary">Update</a></p>
+                <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn btn-secondary">Delete</a></p>
             </div>
         </div>
     </div>

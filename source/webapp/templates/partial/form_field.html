@@ -10,7 +10,7 @@
 {% if field|field_type == 'modelmultiplechoicefield' %}
     {{ field|add_class:'form-checkboxes text-info font-weight-bold'|add_error_class:'form-error' }}
 {% else %}
-    {{ field|add_class:'form-input bg-info text-light'|add_error_class:'form-error' }}
+    {{ field|add_class:'form-input bg-dark text-light'|add_error_class:'form-error' }}
 {% endif %}
 <br/>
 {% for error in field.errors %}

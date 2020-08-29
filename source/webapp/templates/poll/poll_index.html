@@ -4,22 +4,22 @@
 
 
 {% block content %}
-    <h1 class="text-uppercase text-info amatic-text d-flex justify-content-center font-weight-bold pt-4">Quiz</h1>
+    <h1 class="text-uppercase text-light amatic-text d-flex justify-content-center font-weight-bold pt-4">Quiz</h1>
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
     <div class="row">
         {% for poll in polls %}
-            <div class="card w-100 mb-3">
+            <div class="card w-100 mb-3 bg-dark">
                 <div class="card-body">
                     <h5 class="card-title"><a
-                            class="text-success text-uppercase font-weight-bold text-decoration-none"
+                            class="text-light text-uppercase font-weight-bold text-decoration-none d-flex justify-content-center"
                             href="{% url "poll_view" poll.pk %}">{{ poll.question }}</a></h5>
-                    <p class="card-text">{{ poll.created_at }}</p>
                     <div class="d-flex justify-content-around">
-                        <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn-sm btn-info">Update</a></p>
-                        <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn-sm btn-info">Delete</a></p>
+                        <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn btn-outline-light">Update</a></p>
+                        <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn btn-outline-light">Delete</a></p>
                     </div>
+                    <p class="card-text d-flex justify-content-center text-secondary">{{ poll.created_at }}</p>
                 </div>
             </div>
         {% endfor %}

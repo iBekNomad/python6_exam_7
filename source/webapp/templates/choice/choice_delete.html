@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %}Delete{% endblock %}
+
+{#{% block menu %}#}
+{#    <li><a href="{% url 'poll_view' poll.pk %}" class="text-uppercase text-decoration-none">cancel</a></li>#}
+{#{% endblock %}#}
+
+{% block content %}
+    <h2 class="d-flex justify-content-center amatic-text text-light font-weight-bold">Вы уверены, что хотите
+        удалить </h2>
+    <h1 class="d-flex justify-content-center amatic-text text-light font-weight-bold">"{{ choice.text }}"?</h1>
+    <form action="{% url "choice_delete" choice.pk %}" method="post">
+        {% csrf_token %}
+        <div class="d-flex justify-content-center">
+            <p class="mr-5"><input type="submit" value="YES" class="btn btn btn-dark"></p>
+            <p><a href="{% url "poll_index" %}" class="btn btn btn-dark text-uppercase">no</a></p>
+        </div>
+    </form>
+    <h5 class="d-flex justify-content-center text-light">Content: </h5>
+    <h3 class="d-flex justify-content-center text-light">{{ choice.text }}</h3>
+{% endblock %}

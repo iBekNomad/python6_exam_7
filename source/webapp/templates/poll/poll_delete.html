@@ -7,16 +7,14 @@
 {% endblock %}
 
 {% block content %}
-    <h2 class="d-flex justify-content-center amatic-text text-info">Вы уверены, что хотите удалить </h2>
-    <h1 class="d-flex justify-content-center amatic-text text-success">"{{ poll.question }}"?</h1>
-    <p class="d-flex justify-content-center text-info">{{ poll.created_at }}</p>
+    <h2 class="d-flex justify-content-center amatic-text text-light">Вы уверены, что хотите удалить </h2>
+    <h1 class="d-flex justify-content-center amatic-text text-light font-weight-bold">"{{ poll.question }}"?</h1>
+    <p class="d-flex justify-content-center text-light">{{ poll.created_at }}</p>
     <form action="{% url "poll_delete" poll.pk %}" method="post">
         {% csrf_token %}
         <div class="d-flex justify-content-center">
-            <p class="mr-5"><input type="submit" value="YES" class="btn btn btn-info"></p>
-            <p><a href="{% url "poll_view" poll.pk %}" class="btn btn btn-info text-uppercase">no</a> </p>
+            <p class="mr-5"><input type="submit" value="YES" class="btn btn btn-dark"></p>
+            <p><a href="{% url "poll_view" poll.pk %}" class="btn btn btn-dark text-uppercase">no</a> </p>
         </div>
     </form>
-    <h3 class="d-flex justify-content-center text-success">Content: </h3>
-    <p class="d-flex justify-content-center text-success">answers</p>
 {% endblock %}
