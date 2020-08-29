@@ -1,6 +1,6 @@
 {% load page_utils %}
 
-<div class="pagination d-flex justify-content-center">
+<div class="pagination">
     <span class="step-links">
         <a href="?{{ request|page_query_string:1 }}">&laquo; В начало</a>
 
@@ -12,13 +12,13 @@
 
 
         <form class="current-page" method="get">
-            <label for="page" class="text-info">
+            <label for="page">
                 {% for key, value in request.GET.items %}
                     {% if not key == 'page' %}
                         <input type="hidden" name="{{ key }}" value="{{ value }}">
                     {% endif %}
                 {% endfor %}
-                Страница <input type="text" name="page" id="page" class="border-info text-info" value="{{ page_obj.number }}">
+                Страница <input type="text" name="page" id="page" value="{{ page_obj.number }}">
                 из {{ page_obj.paginator.num_pages }}.
             </label>
         </form>
