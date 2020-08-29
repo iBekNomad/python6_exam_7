@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block content %}
+    <div class="card w-75 text-white bg-secondary mb-3">
+        <div class="card-header d-inline-block">
+            {{ poll.question }}
+            <span class="float-right">{{ poll.created_at }}</span>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Secondary card title</h5>
+            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+                content.</p>
+            <div class="d-flex justify-content-around">
+                <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn-sm btn-outline-dark">Update</a></p>
+                <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn-sm btn-outline-dark">Delete</a></p>
+            </div>
+        </div>
+    </div>
+{% endblock %}
