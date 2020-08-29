@@ -1,0 +1,200 @@
+[
+{
+  "model": "webapp.poll",
+  "pk": 1,
+  "fields": {
+    "question": "\u041a\u0442\u043e \u043a\u0440\u0443\u0447\u0435 \u0412\u0435\u043d\u043e\u043c \u0438\u043b\u0438 \u0427\u0435\u043b\u043e\u0432\u0435\u043a \u043f\u0430\u0443\u043a?",
+    "created_at": "2020-08-29T06:49:24.107Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 6,
+  "fields": {
+    "question": "\u0414\u0436\u043e\u043b\u0438 \u0438\u043b\u0438 \u0421\u043a\u0430\u0440\u043b\u0435\u0442 \u0419\u043e\u0445\u0430\u043d\u0441\u043e\u043d?",
+    "created_at": "2020-08-29T09:46:52.466Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 7,
+  "fields": {
+    "question": "\u0421\u0430\u043c\u0430 \u043b\u0443\u0447\u0448\u0430\u044f \u0434\u043e\u0440\u043e\u0433\u0430 \u0442\u0430 \u043a\u043e\u0442\u043e\u0440\u0430\u044f \u0432\u0435\u0434\u0451\u0442..?",
+    "created_at": "2020-08-29T11:33:14.669Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 8,
+  "fields": {
+    "question": "\u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430 \u0438\u043b\u0438 \u0420\u0435\u0430\u043b \u041c\u0430\u0434\u0440\u0438\u0434?",
+    "created_at": "2020-08-29T11:49:58.056Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 9,
+  "fields": {
+    "question": "\u041d\u0435\u043e \u0438\u043b\u0438 \u0414\u0436\u043e\u043d \u0423\u0438\u043a?",
+    "created_at": "2020-08-29T11:50:50.665Z"
+  }
+},
+{
+  "model": "webapp.poll",
+  "pk": 10,
+  "fields": {
+    "question": "\u0422\u0430\u043d\u043e\u0441 \u0438\u043b\u0438 \u0414\u0430\u0440\u043a\u0441\u0430\u0439\u0434?",
+    "created_at": "2020-08-29T11:55:04.573Z"
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 1,
+  "fields": {
+    "text": "\u0427\u0435\u043b\u043e\u0432\u0435\u043a \u041f\u0430\u0443\u043a",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 2,
+  "fields": {
+    "text": "\u0412\u0435\u043d\u043e\u043c",
+    "poll": 1
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 6,
+  "fields": {
+    "text": "\u0414\u0436\u043e\u043b\u0438",
+    "poll": 6
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 7,
+  "fields": {
+    "text": "\u0421\u043a\u0430\u0440\u043b\u0435\u0442",
+    "poll": 6
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 8,
+  "fields": {
+    "text": "\u0414\u043e\u043c\u043e\u0439!",
+    "poll": 7
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 9,
+  "fields": {
+    "text": "\u041d\u0430 \u0418\u0441\u0441\u044b\u043a\u0443\u043b\u044c!",
+    "poll": 7
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 10,
+  "fields": {
+    "text": "\u0420\u0435\u0430\u043b \u041c\u0430\u0434\u0440\u0438\u0434",
+    "poll": 8
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 11,
+  "fields": {
+    "text": "\u0411\u0430\u0440\u0441\u0435\u043b\u043e\u043d\u0430",
+    "poll": 8
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 12,
+  "fields": {
+    "text": "\u041d\u0435\u043e",
+    "poll": 9
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 13,
+  "fields": {
+    "text": "\u0414\u0436\u043e\u043d \u0423\u0438\u043a",
+    "poll": 9
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 14,
+  "fields": {
+    "text": "\u0422\u0430\u043d\u043e\u0441",
+    "poll": 10
+  }
+},
+{
+  "model": "webapp.choice",
+  "pk": 15,
+  "fields": {
+    "text": "\u0414\u0430\u0440\u043a\u0441\u0430\u0439\u0434",
+    "poll": 10
+  }
+},
+{
+  "model": "webapp.answer",
+  "pk": 1,
+  "fields": {
+    "poll": 1,
+    "created_at": "2020-08-29T11:08:45.925Z",
+    "option": 1
+  }
+},
+{
+  "model": "webapp.answer",
+  "pk": 2,
+  "fields": {
+    "poll": 6,
+    "created_at": "2020-08-29T11:23:42.050Z",
+    "option": 6
+  }
+},
+{
+  "model": "webapp.answer",
+  "pk": 3,
+  "fields": {
+    "poll": 6,
+    "created_at": "2020-08-29T11:32:14.142Z",
+    "option": 7
+  }
+},
+{
+  "model": "webapp.answer",
+  "pk": 4,
+  "fields": {
+    "poll": 7,
+    "created_at": "2020-08-29T11:38:08.638Z",
+    "option": 8
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$150000$dyUEazpDNV8U$PFy2LZrVox+AopzoLk3D+ZkZy62eoqLyUqoe2PRHUj0=",
+    "last_login": null,
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@mail.com",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2020-08-29T05:52:34.510Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
