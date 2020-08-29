@@ -2,9 +2,7 @@
 
 {% block title %}Main{% endblock %}
 
-
 {% block content %}
-
     <h1 class="text-uppercase text-light amatic-text d-flex justify-content-center font-weight-bold pt-4">Quiz</h1>
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
@@ -31,5 +29,4 @@
     {% if is_paginated %}
         {% include 'partial/pagination.html' %}
     {% endif %}
-
 {% endblock %}
