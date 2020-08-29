@@ -1,3 +1,9 @@
 from django.contrib import admin
+from webapp.models import Poll
 
-# Register your models here.
+
+class PollAdmin(admin.ModelAdmin):
+    list_display = ('question', 'created_at')
+
+
+admin.site.register(Poll, PollAdmin)
