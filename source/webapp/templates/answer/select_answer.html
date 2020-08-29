@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block title %}View{% endblock %}
+
+{% block menu %}
+    <li><a href="{% url 'poll_update' poll.pk %}" class="text-uppercase font-weight-bold">Update</a></li>
+    <li><a href="{% url 'poll_delete' poll.pk %}" class="font-weight-bold text-uppercase">Delete</a></li>
+    <li><a href="{% url 'choice_create' poll.pk %}" class="font-weight-bold text-uppercase">Add Answer Option</a></li>
+{% endblock %}
+
+{% block content %}
+    <div class="card w-100 text-white bg-dark mb-3">
+        <h3 class="card-header d-inline-block font-weight-bold d-flex justify-content-center">
+            {{ poll.question }}
+        </h3>
+        <div class="card-body">
+            <h4 class="d-flex justify-content-center text-uppercase">Options:</h4>
+            <form action="{% url "select_answer" poll.pk %}" method="POST">
+                {% csrf_token %}
+                <div class="row">
+
+                    {% for choice in poll.choices.all %}
+                        <div class="col-sm-6 p-2">
+                            <div class="card text-light bg-secondary">
+                                <div class="card-body">
+                                    <div class="custom-control custom-radio">
+                                        <input type="radio" value="{{ choice.pk }}" id="{{ choice.pk }}"
+                                               name="option"
+                                               class="custom-control-input">
+                                        <label class="custom-control-label" for="{{ choice.pk }}">{{ choice.text }}</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="d-flex justify-content-around">
+                   <input type="submit" value="Select" class="btn btn-secondary">
+                </div>
+            </form>
+        </div>
+    </div>
+{% endblock %}
+
+{#{% extends 'base.html' %}#}
+{##}
+{#{% block title %}Create{% endblock %}#}
+{##}
+{#{% block content %}#}
+{#    <h1>Select Answer</h1>#}
+{##}
+{#    {% url "select_answer" as action_url %}#}
+{#    {% include 'partial/form.html' with action_url=action_url form_method='post' %}#}
+{#{% endblock %}#}

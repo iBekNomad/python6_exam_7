@@ -6,7 +6,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{% block title %}My Market{% endblock %}</title>
+    <title>{% block title %}Poll{% endblock %}</title>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@300&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&family=Open+Sans+Condensed:wght@300&display=swap"
           rel="stylesheet">
@@ -21,6 +21,7 @@
             <ul class="menu w-100">
                 <li><a href="{% url 'poll_index' %}" class="text-uppercase font-weight-bold">Home</a></li>
                 <li><a href="{% url 'poll_create' %}" class="text-uppercase font-weight-bold">Add Poll</a></li>
+                <li><a href="{% url 'answers' %}" class="text-uppercase font-weight-bold">Answers</a></li>
                 {% block menu %}{% endblock %}
             </ul>
         </div>

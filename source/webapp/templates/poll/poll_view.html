@@ -12,10 +12,10 @@
     <div class="card w-100 text-white bg-dark mb-3">
         <h3 class="card-header d-inline-block font-weight-bold d-flex justify-content-center">
             {{ poll.question }}
-{#            <span class="float-right">{{ poll.created_at }}</span>#}
         </h3>
         <div class="card-body">
             <h4 class="d-flex justify-content-center text-uppercase">Options:</h4>
+            <span class="d-flex justify-content-end">{{ poll.created_at }}</span>
             <div class="row">
                 {% for choice in poll.choices.all %}
                     <div class="col-sm-6 p-2">
@@ -35,6 +35,7 @@
             </div>
             <div class="d-flex justify-content-around">
                 <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn btn-secondary">Update</a></p>
+                <p><a href="{% url 'select_answer' poll.pk %}" class="btn btn btn-secondary">Select</a></p>
                 <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn btn-secondary">Delete</a></p>
             </div>
         </div>

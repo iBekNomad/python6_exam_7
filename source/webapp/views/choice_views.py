@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404, redirect
-from django.urls import reverse, reverse_lazy
+from django.urls import reverse
 
 from webapp.models import Poll, Choice
 from webapp.forms import ChoiceSelectForm

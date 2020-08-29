@@ -1,5 +1,5 @@
 from django import forms
-from .models import Poll, Choice
+from .models import Poll, Choice, Answer
 
 
 class PollForm(forms.ModelForm):
@@ -11,7 +11,13 @@ class PollForm(forms.ModelForm):
 
 
 class ChoiceSelectForm(forms.ModelForm):
-
     class Meta:
         model = Choice
         fields = ['text']
+
+
+class AnswerOptionForm(forms.ModelForm):
+    class Meta:
+        model = Answer
+        fields = ['poll', 'option']
+        widgets = {'option': forms.CheckboxSelectMultiple}

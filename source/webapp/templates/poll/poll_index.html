@@ -17,6 +17,7 @@
                             href="{% url "poll_view" poll.pk %}">{{ poll.question }}</a></h5>
                     <div class="d-flex justify-content-around">
                         <p><a href="{% url 'poll_update' poll.pk %}" class="btn btn btn-outline-light">Update</a></p>
+                        <p><a href="{% url 'select_answer' poll.pk %}" class="btn btn btn-outline-light">Select</a></p>
                         <p><a href="{% url 'poll_delete' poll.pk %}" class="btn btn btn-outline-light">Delete</a></p>
                     </div>
                     <p class="card-text d-flex justify-content-center text-secondary">{{ poll.created_at }}</p>
